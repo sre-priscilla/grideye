@@ -1,4 +1,3 @@
-import os
 import sys
 from string import digits, ascii_uppercase
 
@@ -9,6 +8,7 @@ if __name__ == '__main__':
     image_file = sys.argv[1]
     scale = int(sys.argv[2])
     grid_size = int(sys.argv[3])
+    output_file = sys.argv[4]
 
     # read image
     image = Image.open(image_file)
@@ -47,3 +47,4 @@ if __name__ == '__main__':
         draw.text(xy, digits[j], 0, font=consolas)
 
     image.show()
+    image.save(output_file)
